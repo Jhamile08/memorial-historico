@@ -12,6 +12,7 @@ const items = [
 const board = document.getElementById("board");
 const winMessage = document.getElementById("win-message");
 const winText = document.getElementById("win-text");
+const closeWinMessage = document.getElementById("close-win-message");
 const timer = document.getElementById("timer");
 const bestTimesList = document.getElementById("best-times");
 const confettiColors = ["#ffd166", "#06d6a0", "#118ab2", "#ef476f", "#f78c6b"];
@@ -287,5 +288,9 @@ function checkMatch(){
 document
 .getElementById("restart")
 .addEventListener("click", startGame);
+
+closeWinMessage.addEventListener("click", () => {
+  winMessage.hidden = true;
+});
 
 startGame();
