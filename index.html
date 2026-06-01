@@ -13,12 +13,26 @@
   <button id="restart">Reiniciar partida</button>
 </header>
 
-<main id="board"></main>
+<main class="game-layout">
+  <aside class="score-panel" aria-label="Mejores tiempos">
+    <div class="timer-box">
+      <span class="panel-label">Tiempo</span>
+      <strong id="timer">00:00.0</strong>
+    </div>
+
+    <section>
+      <h2>Mejores tiempos</h2>
+      <ol id="best-times" class="best-times"></ol>
+    </section>
+  </aside>
+
+  <section id="board" aria-label="Tablero de memoria"></section>
+</main>
 
 <div id="win-message" class="win-message" hidden>
   <div class="win-card">
     <h2>Felicitaciones</h2>
-    <p>Has completado el memorial amazónico</p>
+    <p id="win-text">Has completado el memorial amazónico</p>
   </div>
 </div>
 

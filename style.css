@@ -27,10 +27,79 @@ button{
   font-size:16px;
 }
 
+.game-layout{
+  width:min(1700px, 100%);
+  margin:0 auto;
+  padding:0 20px 20px;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.score-panel{
+  position:sticky;
+  top:16px;
+  padding:18px;
+  border:3px solid #0b5d3b;
+  border-radius:16px;
+  background:#fff7df;
+  color:#0b5d3b;
+  text-align:left;
+  box-shadow:0 10px 24px rgba(11, 93, 59, .14);
+}
+
+.timer-box{
+  padding-bottom:16px;
+  margin-bottom:16px;
+  border-bottom:2px solid rgba(11, 93, 59, .22);
+}
+
+.panel-label{
+  display:block;
+  margin-bottom:6px;
+  color:#5e6d35;
+  font-size:14px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+#timer{
+  display:block;
+  font-size:32px;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+
+.score-panel h2{
+  margin:0 0 12px;
+  font-size:22px;
+}
+
+.best-times{
+  margin:0;
+  padding-left:24px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.best-times li{
+  margin:10px 0;
+  padding-left:4px;
+}
+
+.best-times span{
+  font-variant-numeric:tabular-nums;
+}
+
+.best-times .empty-time{
+  color:#6f7951;
+  font-size:16px;
+  font-weight:normal;
+  list-style:none;
+}
+
 #board{
-  max-width:1500px;
-  margin:auto;
-  padding:20px;
   display:grid;
   grid-template-columns:repeat(8,1fr);
   gap:12px;
@@ -143,12 +212,45 @@ button{
 }
 
 @media(max-width:1000px){
+  .game-layout{
+    grid-template-columns:1fr;
+  }
+
+  .score-panel{
+    position:static;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:16px;
+  }
+
+  .timer-box{
+    margin:0;
+    padding:0 16px 0 0;
+    border-bottom:0;
+    border-right:2px solid rgba(11, 93, 59, .22);
+  }
+
   #board{
     grid-template-columns:repeat(4,1fr);
   }
 }
 
 @media(max-width:600px){
+  .game-layout{
+    padding:0 12px 16px;
+  }
+
+  .score-panel{
+    display:block;
+  }
+
+  .timer-box{
+    padding:0 0 14px;
+    margin-bottom:14px;
+    border-right:0;
+    border-bottom:2px solid rgba(11, 93, 59, .22);
+  }
+
   #board{
     grid-template-columns:repeat(2,1fr);
   }
